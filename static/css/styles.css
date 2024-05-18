@@ -136,7 +136,7 @@
 
 @media (max-width: 768px) {
   .left-container{
-    width: 0%;
+    display: none;
   }
   
   .right-container{
@@ -144,7 +144,7 @@
   }
 
   #regForm {
-    margin: 25px auto;
+    margin: 15px auto;
   }
 }
 
