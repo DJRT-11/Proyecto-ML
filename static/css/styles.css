@@ -164,3 +164,13 @@
 .summary p{
   color: white;
 }
+
+.checbox-label{
+  margin-top: 25px;
+}
+
+.form-check-input:checked{
+  background-color: #c46e97 !important;
+  border-color: #c46e97 !important;
+  cursor: pointer;
+}
