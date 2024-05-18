@@ -144,7 +144,8 @@
   }
 
   #regForm {
-    margin: 15px auto;
+    margin: 25px auto;
+    width: 100%;
   }
 }
 
