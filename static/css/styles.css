@@ -82,6 +82,7 @@
 .left-container{
   width: 30%;
   background-color: #167150;
+  position: relative;
 }
 
 .right-container{
@@ -115,6 +116,11 @@
   margin-bottom: 25px;
 }
 
+.logo-big{
+  width: 300px;
+  margin-bottom: 25px;
+}
+
 .back-button{
   width: 50px;
   height: 44px;
@@ -140,4 +146,20 @@
   #regForm {
     margin: 25px auto;
   }
+}
+
+.image-container{
+  width: 80%;
+  margin: auto;
+}
+
+.summary{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 50px;
+}
+
+.summary p{
+  color: white;
 }
