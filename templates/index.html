@@ -26,92 +26,92 @@
       
     </div>  
   <div class="right-container">
-    <form id="regForm" action="">
+    <form id="regForm" method="POST" action="{{url_for('handle_post')}}">
         
         <!-- First Tab -->
-        <div class="tab">
-            <img class="logo" src="../static/images/logo-black.png">
-            <h2 >Comencemos con tus datos</h2>
-            <p class="mb-5">Déjanos tus datos para que te podamos contactar con empleos que se acoplen a tu perfil</p>
-            <div class="form-floating mb-3">
-                <input class="form-control" id="name" placeholder="Tu nombre">
-                <label for="name">Nombre</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="email" placeholder="Correo">
-                <label for="email">Correo</label>
-            </div>
-        </div>
-        
-        <!-- Second Tab -->
-        <div class="tab">
+      <div class="tab">
           <img class="logo" src="../static/images/logo-black.png">
-          <h2>Cuentanos de tus habilidades</h2>
-          <p class="mb-3">Tus habilidades nos ayudan a crear un perfil de puestos que te podemos recomendar</p>
+          <h2 >Comencemos con tus datos</h2>
+          <p class="mb-5">Déjanos tus datos para que te podamos contactar con empleos que se acoplen a tu perfil</p>
           <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="tag-input1">
+              <input class="form-control" id="name" name="user" placeholder="Tu nombre">
+              <label for="name">Nombre</label>
           </div>
-        </div>
-        
-        <!-- Third Tab -->
-        <div class="tab">
-            <img class="logo" src="../static/images/logo-black.png">
-            <h2>¿Tienes experiencia laboral?</h2>
-            <p class="mb-5">Dependiendo tu experiencia laboral podemos decirte qué rango de salarios es el mejor para ti</p>
-            <div class="form-floating mb-3">
-                <input type='number' class="form-control" id="years" placeholder="Años de experiencia">
-                <label for="years">Años de experiencia</label>
-            </div>
+          <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="email" name="mail" placeholder="Correo">
+              <label for="email">Correo</label>
           </div>
-          
-        <!-- Foiurth Tab -->
-        <div class="tab">
-          <img class="logo" src="../static/images/logo-black.png">
-          <h2>Por último... describe tu trabajo deseado</h2>
-          <p class="mb-5">Dependiendo la ubicación y el tamaño de la empresa, pueden variar los salarios respectivos</p>
-          <div class="form-group">
-            <label for="exampleFormControlSelect1">Ubicación de la empresa</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-              <option>Aún no lo sé</option>
-              <option>Estados Unidos/Canada</option>
-              <option>Europa</option>
-              <option>Otra</option>
-            </select>
-          </div>
-          <p class="checbox-label">Tipo de trabajo</p>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-            <label class="form-check-label" for="exampleRadios1">
-              Remoto
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-            <label class="form-check-label" for="exampleRadios2">
-              Presencial
-            </label>
-          </div>
-        </div>
-
-        <div>
-          <div class="buttons-container">
-            <button class="back-button" type="button" id="prevBtn" onclick="nextPrev(-1)"><i class="fa fa-arrow-left" aria-hidden="true"></i>
-            </button>
-            <button class="next-button" type="button" id="nextBtn" onclick="nextPrev(1)">Siguiente</button>
-            <button class="final-button" type="button" id="finalBtn" onclick="nextPrev(1)">Ver Resultados</button>
-          </div>
-        </div>
-        
-        <!-- Circles which indicates the steps of the form: -->
-        <div style="text-align:center;margin-top:40px;">
-          <span class="step"></span>
-          <span class="step"></span>
-          <span class="step"></span>
-          <span class="step"></span>
-        </div>
-        
-        </form>
       </div>
+      
+      <!-- Second Tab -->
+      <div class="tab">
+        <img class="logo" src="../static/images/logo-black.png">
+        <h2>Cuentanos de tus habilidades</h2>
+        <p class="mb-3">Tus habilidades nos ayudan a crear un perfil de puestos que te podemos recomendar</p>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="tag-input1" name="skills">
+        </div>
+      </div>
+      
+      <!-- Third Tab -->
+      <div class="tab">
+        <img class="logo" src="../static/images/logo-black.png">
+        <h2>¿Tienes experiencia laboral?</h2>
+        <p class="mb-5">Dependiendo tu experiencia laboral podemos decirte qué rango de salarios es el mejor para ti</p>
+        <div class="form-floating mb-3">
+            <input type='number' class="form-control" id="years" name="years" placeholder="Años de experiencia">
+            <label for="years">Años de experiencia</label>
+        </div>
+      </div>
+        
+      <!-- Fourth Tab -->
+      <div class="tab">
+        <img class="logo" src="../static/images/logo-black.png">
+        <h2>Por último... describe tu trabajo deseado</h2>
+        <p class="mb-5">Dependiendo la ubicación y el tamaño de la empresa, pueden variar los salarios respectivos</p>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Ubicación de la empresa</label>
+          <select class="form-control" id="exampleFormControlSelect1">
+            <option>Aún no lo sé</option>
+            <option>Estados Unidos/Canada</option>
+            <option>Europa</option>
+            <option>Otra</option>
+          </select>
+        </div>
+        <p class="checbox-label">Tipo de trabajo</p>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+          <label class="form-check-label" for="exampleRadios1">
+            Remoto
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+          <label class="form-check-label" for="exampleRadios2">
+            Presencial
+          </label>
+        </div>
+      </div>
+
+      <div>
+        <div class="buttons-container">
+          <button class="back-button" type="button" id="prevBtn" onclick="nextPrev(-1)"><i class="fa fa-arrow-left" aria-hidden="true"></i>
+          </button>
+          <button class="next-button" type="button" id="nextBtn" onclick="nextPrev(1)">Siguiente</button>
+          <button class="final-button" type="submit" id="finalBtn" onclick="nextPrev(1)">Ver Resultados</button>
+        </div>
+      </div>
+      
+      <!-- Circles which indicates the steps of the form: -->
+      <div style="text-align:center;margin-top:40px;">
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+      </div>
+        
+    </form>
+    </div>
     </div>
     <!-- Import JavaScript -->
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
