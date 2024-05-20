@@ -17,7 +17,7 @@ nltk.download('punkt')
 app = Flask(__name__)
 
 # Load model and steps
-loaded_file = joblib.load('models\pipeline_model.joblib')
+loaded_file = joblib.load('models/pipeline_model.joblib')
 loaded_pipeline = loaded_file['pipeline']
 loaded_model = loaded_file['model']
 loaded_tfidf = loaded_file['tfidf']

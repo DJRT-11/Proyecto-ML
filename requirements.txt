@@ -4,4 +4,7 @@ Werkzeug==2.2.2
 scikit-learn==1.4.2
 joblib==1.4.2
 nltk==3.8.1
-regex==2.2.1
+regex==2024.5.15
+pandas==2.2.2
+inflect==7.2.1
+contractions==0.1.73
