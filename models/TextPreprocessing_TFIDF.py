@@ -1,6 +1,7 @@
-import nltk, unicodedata, re, inflect, contractions, pandas
+import nltk, unicodedata, re, inflect, contractions
+import pandas as pd
 
-from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
 from nltk import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import SnowballStemmer
@@ -83,17 +84,10 @@ class TextPreprocessing_TFIDF():
         return words
 
     def transform(self,X):
-        X_train_new = pandas.Series(X)
+        X_train_new = pd.Series(X)
         X_train_new = X_train_new.apply(contractions.fix)
         X_train_new = X_train_new.apply(word_tokenize)
         X_train_new = X_train_new.apply(lambda x: self.preproccesing(x))
         X_train_new = X_train_new.apply(lambda x: self.stem_words(x))
         X_train_new = X_train_new.apply(lambda x: ' '.join(map(str, x)))
-
-        
-
-        X_tfidf = TfidfVectorizer.transform(X_train_new)
-        X_transformed = svd.transform(X_tfidf)
-        #scaled_data = scaler.fit_transform(xt_svd2_df)
-        #return scaled_data
-        return X_transformed
+        return X_train_new

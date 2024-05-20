@@ -1,17 +1,25 @@
 import joblib, re, unicodedata, sklearn, pandas, nltk
+# import numpy as np
 
 from flask import Flask, render_template,request
 from models import TextPreprocessing_TFIDF
+# from nltk import word_tokenize
+# from nltk.corpus import stopwords
+# from nltk.stem import SnowballStemmer
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.cluster import KMeans
+from sklearn.decomposition import TruncatedSVD
+from sklearn.pipeline import Pipeline
 
+# nltk.download('stopwords')
 
 app = Flask(__name__)
 
 # Load model and steps
-# loaded_file = joblib.load('models\pipeline.joblib')
-# print(loaded_file.steps)
+loaded_file = joblib.load('models\pipeline_model.joblib')
+print(loaded_file)
 
 # Routes
-
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -26,9 +34,6 @@ def handle_post():
 
         skil = skil.replace(',',', ')
 
-
-
-        print(request.form)
         return f'<h2>Nombre: {name}<h2> <h2>Correo: {mail}<h2> <h2>Habilidades: {skil}<h2> <h2>Años de exp.: {year}<h2>'
 
 
