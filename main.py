@@ -15,6 +15,8 @@ nltk.download('stopwords')
 nltk.download('punkt')
 
 app = Flask(__name__)
+import __main__
+__main__.TextPreprocessing_TFIDF = TextPreprocessing_TFIDF
 
 # Load model and steps
 loaded_file = joblib.load('models/pipeline_model.joblib')
