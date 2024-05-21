@@ -97,7 +97,21 @@ def handle_post():
 
 @app.route('/test',methods=['GET'])
 def test():
-    return render_template('prediction.html', name="Brayan", mail="mail", skil="skil", year="3", cluster=2)
+    jobs = [
+        {
+            'job_title': 'Engineer',
+            'salary': 1000,
+        },
+        {
+            'job_title': 'Data Scientist',
+            'salary': 6000,
+        },
+        {
+            'job_title': 'Manager',
+            'salary': 4000,
+        }
+    ]
+    return render_template('prediction.html', name="Brayan", mail="mail", skil="skil", year="3", cluster=2, salaries=jobs)
 
 
 # Main

@@ -35,32 +35,39 @@
       
       
     </div>  
-  <div class="right-container">
-    <div class="prediction-result">
-
-        <p>Hola! {{ name }}! Estos son los roles más adecuados a tu perfil</p>
-        {% if cluster == 1 %}
-            <h2>Roles de Liderazgo y Administrativos</h2>
-            <div class="rol-description">
-                <img  src="../static/images/manager.jpg"/>
-                <p>Nuestra app identifica y recomienda roles que se centran en la gestión y dirección de equipos, planificación estratégica y toma de decisiones. Estos puestos son ideales para quienes tienen habilidades en liderazgo, organización y comunicación, y buscan influir en el crecimiento y desarrollo de la empresa.</p>
-            </div>
-        {% elif cluster == 2 %}
-            <h2>Roles Técnicos</h2>
-            <div class="rol-description">
-                <img src="../static/images/tech.jpg"/>
-                <p> Para aquellos con habilidades especializadas y conocimientos profundos en áreas específicas, nuestra app sugiere roles técnicos que requieren una alta competencia técnica y precisión. Estos puestos son perfectos para profesionales que disfrutan de la resolución de problemas complejos y la implementación de soluciones innovadoras.</p>
-            </div>
-        {% else %}
-            <h2>Roles Híbridos</h2>
-            <div class="rol-description">
-                <img src="../static/images/both.jpg"/>
-                <p>Nuestra app también predice roles que integran tanto habilidades administrativas como técnicas. Estos puestos híbridos son ideales para quienes desean un equilibrio entre la gestión y la ejecución técnica, aprovechando sus capacidades multifacéticas para abordar desafíos de manera integral y eficiente.</p>
-            </div>
+    <div class="right-container">
+        <div class="prediction-result">
+            <p>Hola! {{ name }}! Estos son los trabajos y salarios más acordes a tu perfil</p>
+            {% if cluster == 1 %}
+                <h2>Roles de Liderazgo y Administrativos</h2>
+                <div class="rol-description">
+                    <img  src="../static/images/manager.jpg"/>
+                    <p>Nuestra app identifica y recomienda roles que se centran en la gestión y dirección de equipos, planificación estratégica y toma de decisiones. Estos puestos son ideales para quienes tienen habilidades en liderazgo, organización y comunicación, y buscan influir en el crecimiento y desarrollo de la empresa.</p>
+                </div>
+            {% elif cluster == 2 %}
+                <h2>Roles Técnicos</h2>
+                <div class="rol-description">
+                    <img src="../static/images/tech.jpg"/>
+                    <p> Para aquellos con habilidades especializadas y conocimientos profundos en áreas específicas, nuestra app sugiere roles técnicos que requieren una alta competencia técnica y precisión. Estos puestos son perfectos para profesionales que disfrutan de la resolución de problemas complejos y la implementación de soluciones innovadoras.</p>
+                </div>
+            {% else %}
+                <h2>Roles Híbridos</h2>
+                <div class="rol-description">
+                    <img src="../static/images/both.jpg"/>
+                    <p>Hay roles que implementan tanto habilidades administrativas como técnicas. Estos puestos híbridos son ideales para quienes desean un equilibrio entre la gestión y la ejecución técnica, aprovechando sus capacidades multifacéticas para abordar desafíos de manera integral y eficiente.</p>
+                </div>
             {% endif %}
-                 </div>
+            <div class="jobs-container">
+                {% for job in salaries %}
+                <div class="job-card">
+                    <p>{{ job.job_title }}</p>
+                    <h1>${{ job.salary }}</h1>
+                </div>
+                {% endfor %}
+            </div>
             </div>
         </div>
+    </div>
     <!-- Import JavaScript -->
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
