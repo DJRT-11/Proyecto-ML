@@ -9,7 +9,7 @@
 
   .prediction-result{
     background-color: #ffffff;
-    margin: 100px auto;
+    margin: 40px auto;
     padding: 40px;
     width: 80%;
     min-width: 400px;
@@ -253,6 +253,19 @@ box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14),0 1px 10px 0 rgba(0,0,0,0.12),0 2px 4px
 }
 .mobile-header img{
   width: 150px;
+}
+
+.jobs-container{
+  display: flex;
+  justify-content: center;
+
+}
+
+.job-card{
+  box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14),0 1px 10px 0 rgba(0,0,0,0.12),0 2px 4px -1px rgba(0,0,0,0.3);
+  margin: 20px;
+  padding: 30px;
+  border-radius: 15px;
 }
 
 @media (max-width: 768px) {

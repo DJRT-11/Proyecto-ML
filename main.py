@@ -44,11 +44,25 @@ def handle_post():
         data_tfidf = loaded_tfidf.transform(data_procs)
         data_svd = loaded_svd.transform(data_tfidf)
         data_pred = loaded_model.predict(data_svd)
-        return render_template('prediction.html', name=name, mail=mail, skil=skil, year=year, cluster=data_pred[0])
+        return render_template('prediction.html', name=name, mail=mail, skil=skil, year=year, cluster=data_pred[0], jobs=[])
 
 @app.route('/test',methods=['GET'])
 def test():
-    return render_template('prediction.html', name="Brayan", mail="mail", skil="skil", year="3", cluster=2)
+    jobs = [
+        {
+            'job_title': 'Engineer',
+            'salary': 1000,
+        },
+        {
+            'job_title': 'Data Scientist',
+            'salary': 6000,
+        },
+        {
+            'job_title': 'Manager',
+            'salary': 4000,
+        }
+    ]
+    return render_template('prediction.html', name="Brayan", mail="mail", skil="skil", year="3", cluster=2, salaries=jobs)
 
 
 # Main
