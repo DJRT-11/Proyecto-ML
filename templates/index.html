@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
 <body>
+  <div class="mobile-header">
+    <img  src="../static/images/logo-white.png">
+  </div>
   <div class="flex-container">
 
     <div class="left-container">
@@ -26,7 +29,7 @@
       
     </div>  
   <div class="right-container">
-    <form id="regForm" method="POST" action="{{url_for('handle_post')}}">
+    <form id="regForm" class="right-form" method="POST" action="{{url_for('handle_post')}}">
         
         <!-- First Tab -->
       <div class="tab">

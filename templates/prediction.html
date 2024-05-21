@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediprofesión</title>
+    <!-- Import CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+<body>
+  <div class="mobile-header">
+    <img  src="../static/images/logo-white.png">
+  </div>
+  <div class="flex-container">
+
+    <div class="left-container">
+      <div class="summary2">
+        <img class="logo-big" src="../static/images/logo-white.png">
+        <p>
+          Hola {{ name }}! nos alegra informarte que tus resultados están listos</p>
+        <div class="card-container">
+            <div class="card-flex">
+                <i class="fa-solid fa-user person"></i>
+                <div>
+                    <p>Nombre: <span>{{ name }}</span></p>
+                    <p>Años de experiencia: <span>{{ year }}</span></p>
+                </div> 
+            </div>
+            <p>Habilidades: <span>{{ skil }}</span></p>
+        </div>
+      </div>
+      
+      
+    </div>  
+  <div class="right-container">
+    <div class="prediction-result">
+
+        <p>Hola! {{ name }}! Estos son los roles más adecuados a tu perfil</p>
+        {% if cluster == 1 %}
+            <h2>Roles de Liderazgo y Administrativos</h2>
+            <div class="rol-description">
+                <img  src="../static/images/manager.jpg"/>
+                <p>Nuestra app identifica y recomienda roles que se centran en la gestión y dirección de equipos, planificación estratégica y toma de decisiones. Estos puestos son ideales para quienes tienen habilidades en liderazgo, organización y comunicación, y buscan influir en el crecimiento y desarrollo de la empresa.</p>
+            </div>
+        {% elif cluster == 2 %}
+            <h2>Roles Técnicos</h2>
+            <div class="rol-description">
+                <img src="../static/images/tech.jpg"/>
+                <p> Para aquellos con habilidades especializadas y conocimientos profundos en áreas específicas, nuestra app sugiere roles técnicos que requieren una alta competencia técnica y precisión. Estos puestos son perfectos para profesionales que disfrutan de la resolución de problemas complejos y la implementación de soluciones innovadoras.</p>
+            </div>
+        {% else %}
+            <h2>Roles Híbridos</h2>
+            <div class="rol-description">
+                <img src="../static/images/both.jpg"/>
+                <p>Nuestra app también predice roles que integran tanto habilidades administrativas como técnicas. Estos puestos híbridos son ideales para quienes desean un equilibrio entre la gestión y la ejecución técnica, aprovechando sus capacidades multifacéticas para abordar desafíos de manera integral y eficiente.</p>
+            </div>
+            {% endif %}
+                 </div>
+            </div>
+        </div>
+    <!-- Import JavaScript -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

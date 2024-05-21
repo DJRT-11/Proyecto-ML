@@ -44,9 +44,11 @@ def handle_post():
         data_tfidf = loaded_tfidf.transform(data_procs)
         data_svd = loaded_svd.transform(data_tfidf)
         data_pred = loaded_model.predict(data_svd)
+        return render_template('prediction.html', name=name, mail=mail, skil=skil, year=year, cluster=data_pred[0])
 
-        return f'<h2>Nombre: {name}</h2> <h2>Correo: {mail}</h2> <h2>Habilidades: {skil}</h2> <h2>Años de exp.: {year}</h2> <h2>Cluster predicho: {data_pred}</h2>'
-
+@app.route('/test',methods=['GET'])
+def test():
+    return render_template('prediction.html', name="Brayan", mail="mail", skil="skil", year="3", cluster=2)
 
 
 # Main
