@@ -87,7 +87,7 @@ def handle_post():
 
             role_reg = {
                 'job_title' : row_df.loc[0,'job_title'],
-                'salary': round(loaded_reg_mdl.predict(role_enc)[0] / 500) * 500
+                'salary': round(loaded_reg_mdl.predict(role_enc)[0] / 5000) * 5000
             }
 
             salar_preds.append(role_reg)
