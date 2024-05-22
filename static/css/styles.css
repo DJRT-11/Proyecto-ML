@@ -241,7 +241,7 @@ box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14),0 1px 10px 0 rgba(0,0,0,0.12),0 2px 4px
 .card-container span{
   background-color: lightgray;
   padding: 0 10px;
-  border-radius: 10px;
+  border-radius: 5px;
   margin-left: 10px;
 }
 
@@ -285,6 +285,35 @@ a{
   color: #c46e97 !important;
 }
 
+.tag a{
+  color: white;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  margin: auto;
+  width: 60px;
+  aspect-ratio: 4;
+  --c:#000 90%,#0000;
+  background: 
+    radial-gradient(circle closest-side at left  6px top 50%,var(--c)),
+    radial-gradient(circle closest-side                     ,var(--c)),
+    radial-gradient(circle closest-side at right 6px top 50%,var(--c));
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  animation: l4 1s infinite alternate;
+}
+@keyframes l4 {
+    to{width:25px;aspect-ratio: 1}
+}
+
+.loader-container{
+  text-align: center;
+}
+
+.loader-container img{
+  width: 250px;
+}
 @media (max-width: 768px) {
   .left-container{
     display: none;

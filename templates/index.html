@@ -62,11 +62,10 @@
         <h2>¿Tienes experiencia laboral?</h2>
         <p class="mb-5">Dependiendo tu experiencia laboral podemos decirte qué rango de salarios es el mejor para ti</p>
         <div class="form-floating mb-3">
-            <input type='number' class="form-control" id="years" name="years" placeholder="Años de experiencia">
+            <input value="1" type='number' class="form-control" id="years" name="years" placeholder="Años de experiencia">
             <label for="years">Años de experiencia</label>
         </div>
       </div>
-        
       <!-- Fourth Tab -->
       <div class="tab">
         <img class="logo" src="../static/images/logo-black.png">
@@ -101,6 +100,16 @@
           </label>
         </div>
       </div>
+      
+      <div class="tab">
+        <div class="loader-container">
+          <img src="../static/images/loading.jpg"/>
+          <p>Generando tu predicción...</p>
+          <div class="loader"></div>
+        </div>
+        
+      </div>
+
 
       <div>
         <div class="buttons-container">

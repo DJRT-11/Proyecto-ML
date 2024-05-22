@@ -18,7 +18,7 @@ function showTab(n) {
     hideButton("prevBtn")
     showButton("nextBtn")
     hideButton("finalBtn")
-  } else if (n == (x.length -1 )){
+  } else if (n == (x.length -2 )){
     showButton("prevBtn")
     hideButton("nextBtn")
     showButton("finalBtn")
