@@ -286,7 +286,7 @@ a{
 }
 
 .tag a{
-  color: white;
+  color: white !important;
 }
 
 /* HTML: <div class="loader"></div> */
