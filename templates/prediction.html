@@ -37,7 +37,7 @@
     </div>  
     <div class="right-container">
         <div class="prediction-result">
-            <p>Hola! {{ name }}! Estos son los trabajos y salarios más acordes a tu perfil</p>
+            <p>Hola! {{ name }}! Estos son los trabajos y <b>salarios anuales en dolares</b> más acordes a tu perfil</p>
             {% if cluster == 1 %}
                 <h2>Roles de Liderazgo y Administrativos</h2>
                 <div class="rol-description">
@@ -46,6 +46,7 @@
                 </div>
             {% elif cluster == 2 %}
                 <h2>Roles Técnicos</h2>
+         
                 <div class="rol-description">
                     <img src="../static/images/tech.jpg"/>
                     <p> Para aquellos con habilidades especializadas y conocimientos profundos en áreas específicas, nuestra app sugiere roles técnicos que requieren una alta competencia técnica y precisión. Estos puestos son perfectos para profesionales que disfrutan de la resolución de problemas complejos y la implementación de soluciones innovadoras.</p>
@@ -61,7 +62,7 @@
                 {% for job in salaries %}
                 <div class="job-card">
                     <p>{{ job.job_title }}</p>
-                    <h1>${{ job.salary }}</h1>
+                    <h2>{{ job.formatted_salary }}</h2>
                 </div>
                 {% endfor %}
             </div>

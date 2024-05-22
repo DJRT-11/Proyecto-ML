@@ -217,6 +217,7 @@
 
 .card-container{
   font-size: 14px;
+  border-radius: 20px;
   padding: 15px 10px;
   background-color: white;
   -webkit-box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14),0 1px 10px 0 rgba(0,0,0,0.12),0 2px 4px -1px rgba(0,0,0,0.3);
@@ -266,6 +267,18 @@ box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14),0 1px 10px 0 rgba(0,0,0,0.12),0 2px 4px
   margin: 20px;
   padding: 30px;
   border-radius: 15px;
+  position: relative;
+}
+
+
+.rol-title{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.rol-title img{
+  width: 25px;
 }
 
 @media (max-width: 768px) {

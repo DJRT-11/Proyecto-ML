@@ -85,33 +85,28 @@ def handle_post():
                 pd.DataFrame(loaded_reg_ohl.transform(row_df[['label']]), columns=loaded_reg_ohl.categories_[0])
             ], axis=1)
 
+            rounded_salary = round(loaded_reg_mdl.predict(role_enc)[0] / 5000) * 5000
             role_reg = {
                 'job_title' : row_df.loc[0,'job_title'],
-                'salary': round(loaded_reg_mdl.predict(role_enc)[0] / 5000) * 5000
+                'salary': rounded_salary,
+                'formatted_salary':  "${:,}".format(rounded_salary)
+
             }
 
             salar_preds.append(role_reg)
 
-        print(salar_preds)
-        return render_template('prediction.html', name=name, mail=mail, skil=skil, year=year, cluster=data_pred[0], salaries=salar_preds)
+        sorted_salar_preds = sorted(salar_preds, key=lambda item: item['formatted_salary'], reverse=True)
 
-@app.route('/test',methods=['GET'])
-def test():
-    jobs = [
-        {
-            'job_title': 'Engineer',
-            'salary': 1000,
-        },
-        {
-            'job_title': 'Data Scientist',
-            'salary': 6000,
-        },
-        {
-            'job_title': 'Manager',
-            'salary': 4000,
-        }
-    ]
-    return render_template('prediction.html', name="Brayan", mail="mail", skil="skil", year="3", cluster=2, salaries=jobs)
+        return render_template(
+            'prediction.html', 
+            name=name, 
+            mail=mail, 
+            skil=skil, 
+            year=year, 
+            cluster=data_pred[0], 
+            salaries=sorted_salar_preds[:3]
+        )
+
 
 
 # Main
