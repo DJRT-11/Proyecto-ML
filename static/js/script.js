@@ -255,5 +255,5 @@ function fixStepIndicator(n) {
             duplicate : false,
             max : 10
         });
-        tagInput1.addData(['PHP' , 'JavaScript' , 'CSS'])
+        tagInput1.addData(['Python' , 'Pandas' , 'Data engineering'])
     
